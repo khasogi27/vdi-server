@@ -3,6 +3,7 @@ package com.vdi.vdi_server.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vdi.vdi_server.entity.Item;
@@ -11,11 +12,8 @@ import com.vdi.vdi_server.repo.ItemRepository;
 @Service
 public class ItemService {
   
-  private final ItemRepository itemRepository;
-
-  public ItemService(ItemRepository itemRepository) {
-    this.itemRepository = itemRepository;
-  }
+  @Autowired
+  ItemRepository itemRepository;
 
   public List<Item> getAllItems() {
     return itemRepository.findAll();
