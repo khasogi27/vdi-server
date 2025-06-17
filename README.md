@@ -55,10 +55,13 @@ Configuration is handled via `application.properties` or `application.yml`. Exam
 ```properties
 # src/main/resources/application.properties
 
-server.port=8080
-spring.datasource.url=jdbc:mysql://localhost:3306/vdi
-spring.datasource.username=root
-spring.datasource.password=yourpassword
+spring.application.name=vdi-server
+spring.datasource.url=jdbc:postgresql://localhost:5432/vdi_db
+spring.datasource.username=vdi_user
+spring.datasource.password=rahasia
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+spring.jpa.hibernate.ddl-auto=update
+spring.cors=http://localhost:4200
 ```
 
 ### API Usage
